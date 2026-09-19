@@ -47,19 +47,6 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        // Либо явные L-суффиксы, либо long-переменные
-        long[] array = {12L, 11L, 13L, 5L, 6L, 7L, 1L, 9L, 3L};
-
-        System.out.println("Исходный массив:");
-        printArray(array);
-
-        sort(array);
-
-        System.out.println("Отсортированный массив (возрастание):");
-        printArray(array);
-    }
-
     public static void printArray(long[] arr) {
         for (long value : arr) {
             System.out.print(value + " ");

@@ -1,6 +1,5 @@
 package ru.nsu.mivlix;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import static ru.nsu.mivlix.Main.*;
 
 class MainTest {

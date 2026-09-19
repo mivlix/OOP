@@ -6,6 +6,7 @@ public class Main {
      * Пирамидальная сортировка (min-heap).
      * В результате массив сортируется по убыванию.
      */
+
     public static void sort(int[] arr) {
         int n = arr.length;
 
@@ -28,13 +29,6 @@ public class Main {
         reverse(arr);
     }
 
-    /**
-     * Процедура "просеивания" вниз для min-кучи.
-     *
-     * @param arr массив
-     * @param n   размер кучи
-     * @param i   индекс корня поддерева
-     */
     private static void heapify(int[] arr, int n, int i) {
         int smallest = i;          // Изначально корень — наименьший
         int left = 2 * i + 1;      // Левый потомок
@@ -70,11 +64,6 @@ public class Main {
 
         System.out.println("Отсортированный массив (убывание, min-heap):");
         printArray(array);
-
-        // Если нужен возрастающий порядок — раскомментируйте:
-        // reverse(array);
-        // System.out.println("Возрастающий порядок:");
-        // printArray(array);
     }
 
     public static void printArray(int[] arr) {

@@ -5,7 +5,7 @@ import static ru.nsu.mivlix.Main.*;
 class MainTest {
     @Test
     void test1() {
-        int[] array = {12, 11, 13, 5, 6, 7, 1, 9, 3};
+        long[] array = {12, 11, 13, 5, 6, 7, 1, 9, 3};
 
         System.out.println("Исходный массив:");
         printArray(array);
@@ -18,7 +18,7 @@ class MainTest {
 
     @Test
     void test2() {
-        int[] array = {};
+        long[] array = {};
 
         System.out.println("Исходный массив:");
         printArray(array);
@@ -31,7 +31,7 @@ class MainTest {
 
     @Test
     void test3() {
-        int[] array = {-4};
+        long[] array = {-4};
 
         System.out.println("Исходный массив:");
         printArray(array);
@@ -44,7 +44,7 @@ class MainTest {
 
     @Test
     void test4() {
-        int[] array = {0, -4, 4, -4, 4, -4, 4, 0};
+        long[] array = {0, -4, 4, -4, 4, -4, 4, 0};
 
         System.out.println("Исходный массив:");
         printArray(array);

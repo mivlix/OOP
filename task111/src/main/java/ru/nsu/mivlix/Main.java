@@ -4,11 +4,10 @@ public class Main {
 
     /**
      * Пирамидальная сортировка (min-heap).
-     * В результате массив сортируется по убыванию.
+     * Массив сортируется по возрастанию.
      */
-
-    public static void sort(int[] arr) {
-        int n = arr.length;
+    public static void sort(long[] arr) {
+        int n = arr.length;   // длина — int, не long
 
         // 1. Построение min-кучи
         for (int i = n / 2 - 1; i >= 0; i--) {
@@ -17,36 +16,30 @@ public class Main {
 
         // 2. Извлечение элементов из кучи по одному
         for (int i = n - 1; i > 0; i--) {
-            // Перемещаем текущий корень (минимум) в конец
-            int temp = arr[0];
+            long temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-            // Вызываем heapify на уменьшенной куче
             heapify(arr, i, 0);
         }
 
         reverse(arr);
     }
 
-    private static void heapify(int[] arr, int n, int i) {
-        int smallest = i;          // Изначально корень — наименьший
-        int left = 2 * i + 1;      // Левый потомок
-        int right = 2 * i + 2;     // Правый потомок
+    private static void heapify(long[] arr, int n, int i) {
+        int smallest = i;          // индекс — int
+        int left = 2 * i + 1;      // индекс — int
+        int right = 2 * i + 2;     // индекс — int
 
-        // Если левый потомок меньше корня
         if (left < n && arr[left] < arr[smallest]) {
             smallest = left;
         }
-
-        // Если правый потомок меньше текущего наименьшего
         if (right < n && arr[right] < arr[smallest]) {
             smallest = right;
         }
 
-        // Если наименьший не корень, меняем и продолжаем просеивание
         if (smallest != i) {
-            int swap = arr[i];
+            long swap = arr[i];
             arr[i] = arr[smallest];
             arr[smallest] = swap;
 
@@ -55,29 +48,29 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] array = {12, 11, 13, 5, 6, 7, 1, 9, 3};
+        // Либо явные L-суффиксы, либо long-переменные
+        long[] array = {12L, 11L, 13L, 5L, 6L, 7L, 1L, 9L, 3L};
 
         System.out.println("Исходный массив:");
         printArray(array);
 
         sort(array);
 
-        System.out.println("Отсортированный массив (убывание, min-heap):");
+        System.out.println("Отсортированный массив (возрастание):");
         printArray(array);
     }
 
-    public static void printArray(int[] arr) {
-        for (int value : arr) {
+    public static void printArray(long[] arr) {
+        for (long value : arr) {
             System.out.print(value + " ");
         }
         System.out.println();
     }
 
-    // Вспомогательный метод для разворота массива (если нужен возрастающий порядок)
-    private static void reverse(int[] arr) {
-        int left = 0, right = arr.length - 1;
+    private static void reverse(long[] arr) {
+        int left = 0, right = arr.length - 1;   // индексы — int
         while (left < right) {
-            int temp = arr[left];
+            long temp = arr[left];
             arr[left] = arr[right];
             arr[right] = temp;
             left++;
